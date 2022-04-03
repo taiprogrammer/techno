@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-    <Card text="Taiza Marques" />
+    <div>
+      <Menu />
+    </div>
+    <!-- <div><Carousel /></div> -->
   </div>
 </template>
 
 <script>
-import Card from "./components/Card.vue";
+import Menu from "./components/Menu.vue";
+// import Carousel from "./components/Carousel.vue";
 
 export default {
   name: "App",
   components: {
-    Card,
+    Menu,
+    // Carousel,
   },
 };
 </script>
