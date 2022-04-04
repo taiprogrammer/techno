@@ -6,11 +6,11 @@
           <Logo>Make Your Art</Logo>
         </div>
         <div>
-          <a-input-search placeholder="search" style="width: 300px" />
+          <SearchBar placeholder="search" class="my-input" />
         </div>
         <div>
-          <a-button class="my-btn">Login</a-button>
-          <a-button class="my-btn">Sign Up</a-button>
+          <CustomizedButton class="my-btn">Login</CustomizedButton>
+          <CustomizedButton class="my-btn">Sign Up</CustomizedButton>
         </div>
       </Container>
     </Nav>
@@ -19,6 +19,20 @@
 
 <script>
 import styled from "vue-styled-components";
+
+export const CustomizedButton = styled.button`
+  background-color: #f2d0bd;
+  cursor: pointer;
+  padding: 6px 15px;
+  border-radius: 4px;
+`;
+
+export const SearchBar = styled.input`
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -32,6 +46,7 @@ export const Container = styled.div`
 export const Logo = styled.h1`
   color: #f2d0bd;
   font-weight: bold;
+  margin: 0;
 `;
 
 export const Nav = styled.div`
@@ -48,6 +63,8 @@ export default {
     Nav,
     Container,
     Logo,
+    SearchBar,
+    CustomizedButton,
   },
 };
 </script>
@@ -70,5 +87,24 @@ export default {
 
 .my-btn:active {
   color: #d98989;
+}
+
+.my-input {
+  outline: none;
+}
+
+.my-input:placeholder {
+  margin-left: 15px;
+  color: #d98989;
+}
+
+.my-input:focus {
+  outline: 1.5px solid #d98989;
+}
+
+@media (max-width: 730px) {
+  .my-input {
+    display: none;
+  }
 }
 </style>

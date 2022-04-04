@@ -1,37 +1,18 @@
 <template>
-  <div>
-    <a-carousel :after-change="onChange">
-      <div><h3>1</h3></div>
-      <div><h3>2</h3></div>
-      <div><h3>3</h3></div>
-      <div><h3>4</h3></div>
-    </a-carousel>
+  <div class="carousel">
+    <slot :currentSlide="currentSlide" />
   </div>
 </template>
 <script>
+import { ref } from "vue";
 export default {
   name: "Carousel",
-  mounted() {
-    const onChange = (current) => {
-      console.log(current);
-    };
-
+  data() {
     return {
-      onChange,
+      currentSlide: ref(1),
     };
   },
 };
 </script>
 <style scoped>
-.ant-carousel :deep(.slick-slide) {
-  text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #364d79;
-  overflow: hidden;
-}
-
-.ant-carousel :deep(.slick-slide h3) {
-  color: #fff;
-}
 </style>

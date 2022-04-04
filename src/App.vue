@@ -1,21 +1,15 @@
 <template>
   <div id="app">
-    <div>
-      <Menu />
-    </div>
-    <!-- <div><Carousel /></div> -->
+    <Home />
   </div>
 </template>
 
 <script>
-import Menu from "./components/Menu.vue";
-// import Carousel from "./components/Carousel.vue";
-
+import Home from "../src/view/Home.vue";
 export default {
   name: "App",
   components: {
-    Menu,
-    // Carousel,
+    Home,
   },
 };
 </script>
@@ -33,7 +27,14 @@ p {
   margin: 0px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
   font-family: "Roboto";
+  background-color: #d1c0bb;
 }
 </style>
