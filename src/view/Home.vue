@@ -1,33 +1,17 @@
 <template>
   <div>
     <Menu />
-    <Carousel class="carousel" v-slot="currentSlide">
-      <Slide v-for="(slide, index) in carouselSlides" :key="index">
-        <div class="slide-info" v-show="currentSlide">
-          <img :src="require(`../assets/${slide}.png`)" alt="" />
-          {{ currentSlide === index + 1 }}
-          <br />
-          {{ index + 1 }}
-        </div>
-      </Slide>
-    </Carousel>
+    <Carousel class="carousel" />
   </div>
 </template>
 <script>
 import Menu from "../components/Menu.vue";
 import Carousel from "../components/Carousel.vue";
-import Slide from "../components/Slide.vue";
 
 export default {
-  data() {
-    return {
-      carouselSlides: ["bg-1", "bg-2", "bg-3"],
-    };
-  },
   components: {
     Menu,
     Carousel,
-    Slide,
   },
 };
 </script>
